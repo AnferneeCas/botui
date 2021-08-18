@@ -211,7 +211,9 @@
 
     root.Vue.directive('botui-scroll', {
       inserted: function (el) {
-        _container.scrollTop = _container.scrollHeight;
+        if(opts.autoScroll === undefined || opts.autoScroll){
+          _container.scrollTop = _container.scrollHeight;
+        }      
       }
     });
 
