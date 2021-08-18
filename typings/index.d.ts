@@ -3,7 +3,7 @@
  * 
  * @interface BotUIOptions
  */
-interface BotUIOptions {
+export interface BotUIOptions {
     /**
      * Set this to true if you want to debug the underlaying Vue instance
      * 
@@ -24,10 +24,10 @@ interface BotUIOptions {
     vue?: any;
     /**
      * Set this to vue constructor when you use module loaded system e.g CMD or AMD.
-     * @type {boolean}
+     * * @type {boolean}
      * @memberof BotUIOptions
      */
-    autoScroll?: any;
+    autoScroll?: boolean;
 }
 
 /**
@@ -35,7 +35,7 @@ interface BotUIOptions {
  * 
  * @interface MessageOption
  */
-interface MessageOption {
+export interface MessageOption {
     /**
      * Set to true if you want to show a loading state '3 animated dots'. 
      * Available in version >= 0.3.1
@@ -87,7 +87,7 @@ interface MessageOption {
  * 
  * @interface ActionsOption
  */
-interface BaseActionsOption {
+export interface BaseActionsOption {
     /**
      * Either 'text' or 'button'.
      * 
@@ -130,7 +130,7 @@ interface BaseActionsOption {
  * 
  * @interface TextObject
  */
-interface TextObject {
+export interface TextObject {
     /**
      * Size of the input to show. Relies on HTML size attribute for input elements.
      * 
@@ -166,7 +166,7 @@ interface TextObject {
  * 
  * @interface ButtonObject
  */
-interface ButtonObject {
+export interface ButtonObject {
     /**
      * Icon to show in button.
      * 
@@ -197,11 +197,11 @@ interface ButtonObject {
     cssClass?: string | string[];
 }
 
-interface TextActionOption extends BaseActionsOption {
+export interface TextActionOption extends BaseActionsOption {
     action: TextObject;
 }
 
-interface ButtonActionOption extends BaseActionsOption {
+export interface ButtonActionOption extends BaseActionsOption {
     action: ButtonObject[];
 }
 
@@ -210,7 +210,7 @@ interface ButtonActionOption extends BaseActionsOption {
  * 
  * @interface ResultObject
  */
-interface ResultObject {
+export interface ResultObject {
     /**
      * 'Text' or 'Button' Type of the action it was returned from.
      * 
@@ -322,3 +322,5 @@ declare class BotUI {
         button(action: ButtonActionOption): Promise<ResultObject>;
     }
 }
+
+export default BotUI
