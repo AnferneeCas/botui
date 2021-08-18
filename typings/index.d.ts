@@ -22,6 +22,12 @@ interface BotUIOptions {
      * Set this to vue constructor when you use module loaded system e.g CMD or AMD.
      */
     vue?: any;
+    /**
+     * Set this to vue constructor when you use module loaded system e.g CMD or AMD.
+     * @type {boolean}
+     * @memberof BotUIOptions
+     */
+    autoScroll?: any;
 }
 
 /**
